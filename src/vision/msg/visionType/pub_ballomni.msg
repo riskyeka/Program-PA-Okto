@@ -1,0 +1,15 @@
+int16 visionOmniPosX
+int16 visionOmniPosY
+int16 visionOmniPosT
+
+int16 visionOmniDReal
+int16 visionOmnidetectball
+
+int16 visionOmniPredicX
+int16 visionOmniPredicY
+int16 visionOmniPredicT
+
+float64 visionOmniSpeedx
+float64 visionOmniSpeedy
+
+float64 visionOmniPassing

@@ -1,0 +1,72 @@
+
+
+alias o='uvcdynctrl -L /home/ersow2/hendro/src/ersow/src/vision/hsv_data/omni.gpfl -d video2'
+
+alias f='uvcdynctrl -L /home/ersow2/hendro/src/ersow/src/vision/hsv_data/front.gpfl -d video2'
+alias f39='uvcdynctrl -L /home/ersow2/hendro/src/ersow/src/vision/hsv_data/front39.gpfl -d video2'
+alias f78='uvcdynctrl -L /home/ersow2/hendro/src/ersow/src/vision/hsv_data/front78.gpfl -d video2'
+alias f156='uvcdynctrl -L /home/ersow2/hendro/src/ersow/src/vision/hsv_data/front156.gpfl -d video2'
+
+#alias ff39='uvcdynctrl -L f39.gpfl -d video1'
+#alias ff78='uvcdynctrl -L f78.gpfl -d video1'
+#alias ff156='uvcdynctrl -L f156.gpfl -d video1'
+
+#alias a39='o39 && f39'
+#alias a78='o78 && f78'
+#alias a156='o156 && f156'
+#alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to\ full|percentage"'
+#alias rec='cd && sudo ./Komunikasi/Receiver2'
+#alias zen='echo "ani celalu :3"'
+
+#alias mode4='cd && sudo ./AI/serial'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+# added by Anaconda3 installer
+#export PATH="/home/ersow2/anaconda3/bin:$PATH"
+
+#source activate virtual_platform
+#source deactivate
+
+#CUDA PATH
+export PATH=/usr/local/cuda-8.0/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
+
+
+dconf write /org/gnome/desktop/interface/cursor-size 60
+
+
+source /opt/ros/kinetic/setup.bash
+
+# alias for camera calibration
+alias ocalib='cd ~/hendro && source devel/setup.bash && roslaunch ersow omniCalib.launch'
+alias fcalib='cd ~/hendro && source devel/setup.bash && roslaunch ersow frontCalib.launch'
+
+run_hendro(){ 
+  cd ~/hendro/ && source devel/setup.bash && roslaunch ersow ersow.launch my_args:="$1" && cd ..
+}
+
+
+alias run_build='cd ~/hendro && catkin build --cmake-args -DCMAKE_BUILD_TYPE=Release'

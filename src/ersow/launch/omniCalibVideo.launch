@@ -1,0 +1,13 @@
+<launch>
+
+
+
+	<node
+	pkg  = "vision"
+	type = "omniCalib_video_node" 
+	name = "omnicalib_video"	 
+	launch-prefix="xterm -e"
+	/>
+
+
+</launch>

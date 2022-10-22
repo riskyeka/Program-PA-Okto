@@ -1,0 +1,97 @@
+<launch>
+	<node
+	pkg  = "vision"
+	type = "omnipublish_node"
+	name = "omnipublisher"
+	launch-prefix = "xterm -e"
+	respawn = "true"
+	/>
+
+	<node
+	pkg  = "vision"
+	type = "omni_ball_node"
+	name = "omni_ball"
+	launch-prefix = "xterm -e"
+	args = "$(arg my_args)"
+	respawn = "true"
+	/>
+
+	
+	<node
+	pkg = "ersow_comm"
+	type = "ratdma_node"
+	name = "ratdma"
+	required = "true"
+	launch-prefix="xterm -e"/>
+
+	<node
+	pkg="ersow_comm"
+	type="broker_node"
+	name="broker"
+	required="true"
+	launch-prefix="xterm -e"/>
+
+	<node
+	pkg  = "ersow"
+	type = "ersowSkill_node"
+	name = "ersowskill"
+	launch-prefix="xterm -e"
+	required = "true"
+	/>
+	
+
+	<node
+	pkg  = "ersow"
+	type = "embeddedReceived_node"
+	name = "embeddedreceived"
+	launch-prefix="xterm -e"	
+	required="true"	
+	/>
+
+
+	<?ignore
+
+	<node
+	pkg  = "vision"
+	type = "omniObst_node"
+	name = "omni_obstacle"
+	args = "$(arg my_args)"
+	launch-prefix = "xterm -e"
+	respawn = "true"
+	/>	
+
+	<arg name = "my_args"/>
+
+	
+		<node
+	pkg  = "ersow"
+	type = "basestation_node"
+	name = "basestation"
+	respawn = "true"
+	output="screen"
+	launch-prefix="xterm -e"
+	/>
+
+	<arg name = "my_args"/>
+		<node
+		pkg  = "ersow"
+		type = "battery_node"
+		name = "batteryLaptop2"
+		respawn = "true"
+	/>
+
+	
+	<node
+		pkg  = "ersow"
+		type = "embeddedSend_node"
+		name = "embeddedsend"	 
+		launch-prefix="xterm -e"	   
+		required="true"	
+	/>
+
+	<param name="GlobalFD" value="5"/>
+
+	
+	?>
+</launch>
+	

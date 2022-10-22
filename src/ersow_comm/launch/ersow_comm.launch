@@ -1,0 +1,4 @@
+<launch>
+	<node pkg = "ersow_comm" type = "ratdma_node" name = "ratdma" required="true"	/>
+		<node pkg = "ersow_comm" type = "broker_node" name = "broker" required="true"	/>
+</launch>

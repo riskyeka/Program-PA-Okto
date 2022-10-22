@@ -1,0 +1,35 @@
+<launch>
+
+	
+
+
+
+	<node
+	pkg  = "vision"
+	type = "omnipublish_node"
+	name = "omnipublisher"
+	launch-prefix = "xterm -e"
+	respawn = "true"
+	/>
+
+
+	<node
+	pkg  = "vision"
+	type = "omni_ball_node"
+	name = "omni_ball"
+	args = "$(arg my_args)"
+	launch-prefix = "xterm -e"
+	respawn = "true"
+	/>
+
+	<node
+	pkg  = "vision"
+	type = "omniObst_node"
+	name = "omni_obstacle"
+	args = "$(arg my_args)"
+	launch-prefix = "xterm -e"
+	respawn = "true"
+	/>
+
+
+</launch>

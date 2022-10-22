@@ -1,0 +1,2 @@
+/home/ujang/oop-okto/devel/./cmake.lock 23
+/home/ujang/okto/devel/./cmake.lock 32

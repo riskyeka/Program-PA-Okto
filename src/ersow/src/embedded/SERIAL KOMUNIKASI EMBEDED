@@ -1,0 +1,7 @@
+KOMUNIKASI EMBEDED
+
+MASTER BARU : /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A9015Q17-if00-port0
+
+MASTER LAMA
+SEND : /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_ErsowReceiver1-if00-port0
+Recieve : /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_00000000-if00-port0
